@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Katalog</title>
+</head>
+<body>
+
+<h1 id="judul"></h1>
+<p id="owner"></p>
+
+<ul id="list"></ul>
+
+<input type="text" id="itemInput">
+<button onclick="addItem()">Tambah</button>
+
+<script>
+const API_URL = "/api";
+
+async function loadData() {
+    const res = await fetch(API_URL + "/info");
+    const data = await res.json();
+
+    document.getElementById("judul").innerText = data.judul_katalog;
+    document.getElementById("owner").innerText = data.pemilik + " - " + data.nim;
+
+    const list = document.getElementById("list");
+    list.innerHTML = "";
+
+    data.items.forEach(item => {
+        list.innerHTML += `<li>${item}</li>`;
+    });
+}
+
+async function addItem() {
+    const item = document.getElementById("itemInput").value;
+
+    await fetch(API_URL + "/add-item", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({item})
+    });
+
+    loadData();
+}
+
+loadData();
+</script>
+
+</body>
+</html>
