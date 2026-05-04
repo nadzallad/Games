@@ -18,26 +18,24 @@ nim_owner = os.environ.get('NIM_PRAKTIKAN', '00000000')
 # BAGIAN INI BEBAS KALIAN MODIFIKASI SESUAI TEMA YANG KALIAN PILIH
 # =====================================================================
 katalog_data = {
-    "judul_katalog": f"Loadout Game Milik {nama_owner}",
+    "judul_katalog": f"JELEK GA NGASIH NASGOR",
     "pemilik": nama_owner,
     "nim": nim_owner,
     "items": ["AK-47", "M416", "Sniper AWM"]
 }
 
-@app.route('/api/info', methods=['GET'])
+# 🔥 TANPA /api
+@app.route('/info', methods=['GET'])
 def get_info():
- return jsonify(katalog_data)
+    return jsonify(katalog_data)
 
-@app.route('/api/add-item', methods=['POST'])
+@app.route('/add-item', methods=['POST'])
 def add_item():
- new_item = request.json.get('item')
- if new_item:
-    katalog_data["items"].append(new_item)
-    return jsonify({
-    "message": "Item berhasil ditambahkan!", 
-    "items": katalog_data["items"]
-    }), 201
- return jsonify({"error": "Data tidak valid"}), 400
+    new_item = request.json.get('item')
+    if new_item:
+        katalog_data["items"].append(new_item)
+        return jsonify({"message": "Item berhasil ditambahkan!", "items": katalog_data["items"]}), 201
+    return jsonify({"error": "Data tidak valid"}), 400
 
 if __name__ == '__main__':
- app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000)

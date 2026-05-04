@@ -19,9 +19,9 @@ spec:
         ports:
         - containerPort: 5000
         env:
-        - name: NAMA
+        - name: NAMA_PRAKTIKAN
           value: "Nadzalla"        
-        - name: NIM
+        - name: NIM_PRAKTIKAN
           value: "2408095" 
 ---
 apiVersion: v1
