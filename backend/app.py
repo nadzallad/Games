@@ -18,18 +18,17 @@ nim_owner = os.environ.get('NIM_PRAKTIKAN', '00000000')
 # BAGIAN INI BEBAS KALIAN MODIFIKASI SESUAI TEMA YANG KALIAN PILIH
 # =====================================================================
 katalog_data = {
-    "judul_katalog": f"Loadout Game Milik {nama_owner}",
+    "judul_katalog": f"Loadout Game {nama_owner}",
     "pemilik": nama_owner,
     "nim": nim_owner,
     "items": ["AK-47", "M416", "Sniper AWM"]
 }
 
-# 🔥 TANPA /api
-@app.route('/info', methods=['GET'])
+@app.route('/api/info', methods=['GET'])
 def get_info():
     return jsonify(katalog_data)
 
-@app.route('/add-item', methods=['POST'])
+@app.route('/api/add-item', methods=['POST'])
 def add_item():
     new_item = request.json.get('item')
     if new_item:
