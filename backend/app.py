@@ -18,7 +18,7 @@ nim_owner = os.environ.get('NIM_PRAKTIKAN', '00000000')
 # BAGIAN INI BEBAS KALIAN MODIFIKASI SESUAI TEMA YANG KALIAN PILIH
 # =====================================================================
 katalog_data = {
-    "judul_katalog": f"Loadout Game Ini Milik {nama_owner}",
+    "judul_katalog": f"Loadout Game {nama_owner}",
     "pemilik": nama_owner,
     "nim": nim_owner,
     "items": ["AK-47", "M416", "Sniper AWM"]
