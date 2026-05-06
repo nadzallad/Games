@@ -24,11 +24,11 @@ katalog_data = {
     "items": ["AK-47", "M416", "Sniper AWM"]
 }
 
-@app.route('/api/info', methods=['GET'])
+@app.route('/info', methods=['GET'])
 def get_info():
     return jsonify(katalog_data)
 
-@app.route('/api/add-item', methods=['POST'])
+@app.route('/add-item', methods=['POST'])
 def add_item():
     new_item = request.json.get('item')
     if new_item:
