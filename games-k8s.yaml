@@ -20,7 +20,7 @@ spec:
         - containerPort: 5000
         env:
         - name: NAMA_PRAKTIKAN
-          value: "Nadzalla"        
+          value: "Nadzalla Diva"        
         - name: NIM_PRAKTIKAN
           value: "2408095" 
       resources:
