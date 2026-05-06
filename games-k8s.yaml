@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: backend-games
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: backend
@@ -23,10 +23,10 @@ spec:
           value: "Nadzalla"        
         - name: NIM_PRAKTIKAN
           value: "2408095" 
-      resources:
-        limits:
-          memory: "256Mi" # Batas maksimal RAM
-          cpu: "500m"  
+        resources:
+          limits:
+            memory: "256Mi" # Batas maksimal RAM
+            cpu: "500m"  
 ---
 apiVersion: v1
 kind: Service
