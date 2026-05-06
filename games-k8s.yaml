@@ -23,6 +23,10 @@ spec:
           value: "Nadzalla"        
         - name: NIM_PRAKTIKAN
           value: "2408095" 
+      resources:
+        limits:
+          memory: "256Mi" # Batas maksimal RAM
+          cpu: "500m"  
 ---
 apiVersion: v1
 kind: Service
