@@ -24,9 +24,12 @@ spec:
         - name: NIM_PRAKTIKAN
           value: "2408095" 
         resources:
+          requests:
+            cpu: "50m"
+            memory: "64Mi"
           limits:
-            memory: "256Mi" # Batas maksimal RAM
-            cpu: "500m"  
+            memory: "200Mi" # Batas maksimal RAM
+            cpu: "256m"  
 ---
 apiVersion: v1
 kind: Service
